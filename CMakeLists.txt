@@ -24,7 +24,7 @@ if (BUILD_TESTS)
     enable_testing()
     add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/third-party/gtest)
     add_executable(tests
-            ${CMAKE_CURRENT_SOURCE_DIR}/tests.cpp)
+            ${CMAKE_CURRENT_SOURCE_DIR}/test/tests.cpp)
     target_link_libraries(tests ${PROJECT_NAME} gtest_main gmock_main)
     add_test(NAME unit_tests COMMAND tests)
 endif()

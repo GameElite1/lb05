@@ -1,10 +1,10 @@
-#include "../libr/Transaction.h"
+#include "Transaction.h"
 
 #include <cassert>
 #include <iostream>
 #include <stdexcept>
 
-#include "../libr/Account.h"
+#include "Account.h"
 
 namespace {
 // RAII
