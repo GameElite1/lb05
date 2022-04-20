@@ -1,3 +1,4 @@
+[![Coverage Status](https://coveralls.io/github/GameElite1/lb05/badge.svg)](https://coveralls.io/github/GameElite1/lb05)
 ## Laboratory work V
 
 Данная лабораторная работа посвещена изучению фреймворков для тестирования на примере **GTest**
