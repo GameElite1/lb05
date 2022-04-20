@@ -33,14 +33,17 @@ jobs:
           cd build
           make ./tests
           ./tests
-      - name: npm
+      - name: lcov
         run: |
-          npm install
-          make test-coverage
-
-      - name: Coveralls
+         sudo pip install --user cpp-coveralls
+         sudo apt-get install -y lcov
+      - name: run
+        run: |
+         lcov --capture --directory output/CMakeFiles/banking.dir/banking --output-file ./lcov.info
+         lcov --remove ./lcov.info '/home/runner/work/tp-lab05/tp-lab05/third-party/gtest/*' -o ./lcov_filtered.info
+      - name: coveralls
         uses: coverallsapp/github-action@master
         with:
-         github-token: ${{ secrets.GITHUB_TOKEN }}
-
+          path-to-lcov: "./lcov_filtered.info"
+          github-token: ${{ secrets.github_token }}
 
