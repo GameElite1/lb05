@@ -19,7 +19,9 @@ target_include_directories(${PROJECT_NAME} PUBLIC
         )
 
 if (BUILD_TESTS)
-
+    if (COVERAGE)
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --coverage")
+    endif()
 
     enable_testing()
     add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/third-party/gtest)
