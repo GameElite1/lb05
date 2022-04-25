@@ -8,6 +8,11 @@
 TEST(Account, GetBalance){
     Account Den(1,100);
     EXPECT_EQ(Den.GetBalance(), 100);
+    Den.Lock();
+    Den.ChangeBalance(-30);
+    Den.Unlock();
+    EXPECT_EQ(Den.GetBalance(), 90);
+    
 }
 
 TEST(Account, ChangeBalance){
